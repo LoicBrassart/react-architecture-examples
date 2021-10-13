@@ -23,7 +23,7 @@ When your project is 20+ components wide
 
 - Components should be separated following their **aim**:
 
-  - `entities` for business entities
+  - `business` for business entities
     - "Visitors come to my website to see this content"
     - Entities can be displayed several ways (in a table, as cards, as buttons, as forms, ...). In this case, you can deep one level deeper yet, and create several components for your entity. I recommend that data is passed as `props`, and nested components should be simple expressions
   - `layout` for the basic, common structure of your app (Nav menu, footer, etc)
