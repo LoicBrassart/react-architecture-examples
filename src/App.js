@@ -1,5 +1,12 @@
+import Title from './Title';
+import './styles.css';
+
 function App() {
-  return <>Hello !</>;
+  return (
+    <>
+      <Title />
+    </>
+  );
 }
 
 export default App;

@@ -16,3 +16,19 @@
   - Tests (sad but true... To be continued ?)
   - Logo
   - WeBVitals & other tools
+
+## XS - Small Projects
+
+When your project is 1~5 components wide:
+
+- Components can live in the `src` folder
+- Styles can be aggregated in a global `styles.css` file
+
+### Pros:
+
+- Easy to set up
+
+### Cons:
+
+- In cases where one can use this architecture, one can wonder whether React is useful at all
+- I physically cringe whenever I see/use this architecture
