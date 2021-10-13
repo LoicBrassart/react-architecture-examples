@@ -16,3 +16,22 @@
   - Tests (sad but true... To be continued ?)
   - Logo
   - WeBVitals & other tools
+
+## MD - Medium Projects
+
+When your project is 6~20 components wide:
+
+- Components live in a `components` folder
+- Components each have their own folder
+  - Component files are named `index.js`
+  - Styles are named `style.css`
+  - Specific assets can be stored directly in the component folder
+
+### Pros
+
+- Quite scalable
+
+### Cons
+
+- Most files are names `index.js` or `style.css`, which can be uncomfortable at first
+  - I took the habit of rading the _folder_ in which my files are, instead or their _name_
