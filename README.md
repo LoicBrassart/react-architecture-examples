@@ -50,6 +50,28 @@ When your project is 20+ components wide
 
 ## Other tips
 
+### pages/Err404
+
+#### Aim
+
+Ensure any malformed url will fall on a proper error page
+
+#### Explanation
+
+- Add a simple `<Route>` at the **last** position in your `<Switch>`, and make it match any pattern. Every url not recognized up to there will redirect to your 404 page
+
+### ui/PrivateRoute
+
+#### Aim
+
+Add a layer of UX/Security in your frontend, ensuring that a visitor can't access to your administration pages even if he knows the exact url
+
+#### Explanation
+
+- Create a PrivateRoute component, and make your authentication checking accessible from it (in this repo, it's a simple boolean).
+- If `auth` is true, the component will go through and redirect you to the mentionned page
+- If `auth` is false, you'll be redirected to any page of your choice (here, I juste redirect to my homepage)
+
 ### Absolute imports
 
 #### Aim
@@ -70,25 +92,3 @@ Simplify imports, by specifying that `src` is an acceptable root folder:
 #### Caveats
 
 Beware, if one of your main folders sports the same name as one of your `node_modules`, the module will be imported instead of your file... Nevermore will I call a gfolder `entities`
-
-### ui/PrivateRoute
-
-#### Aim
-
-Add a layer of UX/Security in your frontend, ensuring that a visitor can't access to your administration pages even if he knows the exact url
-
-#### Explanation
-
-- Create a PrivateRoute component, and make your authentication checking accessible from it (in this repo, it's a simple boolean).
-- If `auth` is true, the component will go through and redirect you to the mentionned page
-- If `auth` is false, you'll be redirected to any page of your choice (here, I juste redirect to my homepage)
-
-### pages/Err404
-
-#### Aim
-
-Ensure any malformed url will fall on a proper error page
-
-#### Explanation
-
-- Add a simple `<Route>` at the **last** position in your `<Switch>`, and make it match any pattern. Every url not recognized up to there will redirect to your 404 page
