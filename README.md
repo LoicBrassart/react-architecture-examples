@@ -16,3 +16,31 @@
   - Tests (sad but true... To be continued ?)
   - Logo
   - WeBVitals & other tools
+
+## Large Projects
+
+When your project is 20+ components wide
+
+- Components should be separated following their **aim**:
+  - `entities` for business entities
+    - "Visitors come to my website to see this content"
+  - `layout` for the basic, common structure of your app (Nav menu, footer, etc)
+  - `pages` for components called by your router
+    - You can place all your "on mount" API calls here: it will prevent you from calling the
+  - `ui` for navigation components (Buttons, Lists, ...)
+  - Of course you can create as many folders as you need!
+- Helper code should go in specific, component-agnostic folders (`hooks` for helper functions, `styles` for global styling and variables, ...)
+- Each "main" folder should contain an `index.js` (yeah, I know: "Again ?!"). These index files will do exactly wht the titl implies: they index the content, import it and re-export all components as a default export
+  - This allows to import several components at once in the other files, limiting file-cluttering at the head of every business component
+
+### Pros
+
+- Very scalable solution, every new bit of code should now have a clear place to be stored
+- Easy imports ("Import Header and Footer from my layout" seems quite logical, even when read aloud)
+- Abstraction of component complexity: whether a component uses a custom hook, a css-in-js tool or anything else, it should **never** be apparent from higher in the file architecture
+
+### Cons
+
+- Quite complicated at first glance
+- Every component/file added must be referenced in the matching `index.js` file
+  - ... And sometimes, the hardest part is to ind which one it is !
